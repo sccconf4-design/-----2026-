@@ -380,7 +380,7 @@ DATA.forEach((g,i)=>{
         <div class="item" id="a${x[2]}" data-s="${(x[0]+" "+x[1]).replace(/"/g,"")}">
           <div class="t"><b>${x[0]}</b><span>✍️ ${x[1]}</span></div>
           <span class="pg">صفحة ${x[2]}</span>
-          <button class="btn sm dark cp" data-a="a${x[2]}" title="نسخ رابط المقال" aria-label="نسخ رابط المقال">🔗</button>
+          <button class="btn sm dark cp" data-a="a${x[2]}" title="نسخ رابط بداية المقال داخل المجلة" aria-label="نسخ رابط بداية المقال داخل المجلة">🔗</button>
           <a class="btn sm red rd" data-p="${x[2]}" href="${flipAt(x[2])}">اقرأ المقال</a>
         </div>`).join("")}</div></div>`);
 });
@@ -462,8 +462,8 @@ if(matchMedia("(hover:hover)").matches){
 /* نسخ رابط مقال + الانتقال إليه */
 document.addEventListener("click",async e=>{
   const b=e.target.closest(".cp"); if(!b) return;
-  const u=url+"#"+b.dataset.a;
-  try{await navigator.clipboard.writeText(u);toast("✅ تم نسخ رابط المقال");}catch{prompt("انسخ الرابط:",u);}
+  const u=flipAt(+b.dataset.a.slice(1));
+  try{await navigator.clipboard.writeText(u);toast("✅ تم نسخ رابط بداية المقال داخل المجلة");}catch{prompt("انسخ الرابط:",u);}
 });
 function goHash(){
   const id=location.hash.slice(1); const el=id&&document.getElementById(id);
