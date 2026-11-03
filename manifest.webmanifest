@@ -1,0 +1,24 @@
+{
+ "name": "مجلة فرحة مصر بعد النصر",
+ "short_name": "فرحة مصر",
+ "lang": "ar",
+ "dir": "rtl",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "background_color": "#fbf6ec",
+ "theme_color": "#b3122a",
+ "icons": [
+  {
+   "src": "icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any maskable"
+  }
+ ]
+}
